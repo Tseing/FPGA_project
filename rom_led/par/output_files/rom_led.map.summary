@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Sep 26 18:31:21 2020
+Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Full Version
+Revision Name : rom_led
+Top-level Entity Name : rom_led
+Family : Cyclone IV E
+Total logic elements : 1,200
+    Total combinational functions : 638
+    Dedicated logic registers : 970
+Total registers : 970
+Total pins : 6
+Total virtual pins : 0
+Total memory bits : 149,504
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1

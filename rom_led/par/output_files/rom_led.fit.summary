@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sat Sep 26 18:31:31 2020
+Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Full Version
+Revision Name : rom_led
+Top-level Entity Name : rom_led
+Family : Cyclone IV E
+Device : EP4CE10F17C8
+Timing Models : Final
+Total logic elements : 1,142 / 10,320 ( 11 % )
+    Total combinational functions : 640 / 10,320 ( 6 % )
+    Dedicated logic registers : 970 / 10,320 ( 9 % )
+Total registers : 970
+Total pins : 6 / 180 ( 3 % )
+Total virtual pins : 0
+Total memory bits : 149,504 / 423,936 ( 35 % )
+Embedded Multiplier 9-bit elements : 0 / 46 ( 0 % )
+Total PLLs : 1 / 2 ( 50 % )
