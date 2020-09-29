@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="da">
+		<CBX_INST_ENTRY INSTANCE_NAME="|hs_dual_da|pll:u_pll|altpll:altpll_component" CBX_FILE_NAME="pll_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|hs_dual_da|rom_1024x10b:u_rom_1024x10b|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_qka1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
