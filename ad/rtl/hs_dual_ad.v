@@ -21,7 +21,6 @@ assign ad0_clk = ~clk_out1;
 assign ad1_clk = ~clk_out1;
 
 pll u_pll(
-    .areset     (~sys_rst_n),
     .inclk0     (sys_clk),
     .c0         (clk_out1),
     .c1         (clk_test)

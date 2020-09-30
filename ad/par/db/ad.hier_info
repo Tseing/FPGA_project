@@ -29,7 +29,6 @@ ad1_oe << <GND>
 
 
 |hs_dual_ad|pll:u_pll
-areset => areset.IN1
 inclk0 => sub_wire4[0].IN1
 c0 <= altpll:altpll_component.clk
 c1 <= altpll:altpll_component.clk
@@ -41,7 +40,7 @@ inclk[1] => pll_altpll:auto_generated.inclk[1]
 fbin => ~NO_FANOUT~
 pllena => ~NO_FANOUT~
 clkswitch => ~NO_FANOUT~
-areset => pll_altpll:auto_generated.areset
+areset => ~NO_FANOUT~
 pfdena => ~NO_FANOUT~
 clkena[0] => ~NO_FANOUT~
 clkena[1] => ~NO_FANOUT~
@@ -96,7 +95,6 @@ icdrclk <= <GND>
 
 
 |hs_dual_ad|pll:u_pll|altpll:altpll_component|pll_altpll:auto_generated
-areset => pll1.ARESET
 clk[0] <= pll1.CLK
 clk[1] <= pll1.CLK1
 clk[2] <= pll1.CLK2
