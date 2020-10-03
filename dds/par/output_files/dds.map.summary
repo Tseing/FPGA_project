@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Tue Sep 29 20:48:20 2020
+Analysis & Synthesis Status : Successful - Sat Oct 03 15:54:29 2020
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Full Version
 Revision Name : dds
 Top-level Entity Name : dds
 Family : Cyclone IV E
-Total logic elements : 994
-    Total combinational functions : 575
-    Dedicated logic registers : 791
-Total registers : 791
+Total logic elements : 1,016
+    Total combinational functions : 587
+    Dedicated logic registers : 803
+Total registers : 803
 Total pins : 18
 Total virtual pins : 0
-Total memory bits : 286,720
+Total memory bits : 288,768
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 1

@@ -15,22 +15,22 @@ sys_rst_n => addr[11].ACLR
 sys_rst_n => addr[12].ACLR
 sys_rst_n => addr[13].ACLR
 sys_rst_n => _.IN1
-da_clk <= pll:u_pll.c0
-da_wrt <= pll:u_pll.c0
-da_data[0] <= rom:u_rom.q
-da_data[1] <= rom:u_rom.q
-da_data[2] <= rom:u_rom.q
-da_data[3] <= rom:u_rom.q
-da_data[4] <= rom:u_rom.q
-da_data[5] <= rom:u_rom.q
-da_data[6] <= rom:u_rom.q
-da_data[7] <= rom:u_rom.q
-da_data[8] <= rom:u_rom.q
-da_data[9] <= rom:u_rom.q
-da_data[10] <= rom:u_rom.q
-da_data[11] <= rom:u_rom.q
-da_data[12] <= rom:u_rom.q
-da_data[13] <= rom:u_rom.q
+da_clk << pll:u_pll.c0
+da_wrt << pll:u_pll.c0
+da_data[0] << rom:u_rom.q
+da_data[1] << rom:u_rom.q
+da_data[2] << rom:u_rom.q
+da_data[3] << rom:u_rom.q
+da_data[4] << rom:u_rom.q
+da_data[5] << rom:u_rom.q
+da_data[6] << rom:u_rom.q
+da_data[7] << rom:u_rom.q
+da_data[8] << rom:u_rom.q
+da_data[9] << rom:u_rom.q
+da_data[10] << rom:u_rom.q
+da_data[11] << rom:u_rom.q
+da_data[12] << rom:u_rom.q
+da_data[13] << rom:u_rom.q
 
 
 |dds|pll:u_pll
