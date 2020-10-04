@@ -1,0 +1,256 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffbec100042, pid=18704, tid=2972
+#
+# JRE version: 6.0_23-b05
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (19.0-b09 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# C  [ntdll.dll+0xa0042]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000026c3000):  JavaThread "IP Toolbench loading thread" [_thread_in_Java, id=2972, stack(0x00000000025c0000,0x00000000026c0000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0xffffffffffffffff
+
+Registers:
+RAX=0x00000000026b1001, RBX=0x0000000000000002, RCX=0x00000000026bc768, RDX=0x00000000026bc680
+RSP=0x00000000026bc608, RBP=0x00007ffb70a59830, RSI=0x0000000000000003, RDI=0x0000000000000020
+R8=0x0000000000386000, R9=0x00000000026bc610, R10=0x00000000eaf2d3e0, R11=0x00000000026bcd50
+R12=0x0000000000000000, R13=0x0000000000000040, R14=0x0000000000000023, R15=0x00007ffb70a59830
+RIP=0x00007ffbec100042, EFLAGS=0x0000000000010202
+
+Register to memory mapping:
+
+RAX=0x00000000026b1001
+0x00000000026b1001 is pointing into the stack for thread: 0x00000000026c3000
+"IP Toolbench loading thread" prio=6 tid=0x00000000026c3000 nid=0xb9c runnable [0x00000000026bd000]
+   java.lang.Thread.State: RUNNABLE
+
+RBX=0x0000000000000002
+0x0000000000000002 is pointing to unknown location
+
+RCX=0x00000000026bc768
+0x00000000026bc768 is pointing into the stack for thread: 0x00000000026c3000
+"IP Toolbench loading thread" prio=6 tid=0x00000000026c3000 nid=0xb9c runnable [0x00000000026bd000]
+   java.lang.Thread.State: RUNNABLE
+
+RDX=0x00000000026bc680
+0x00000000026bc680 is pointing into the stack for thread: 0x00000000026c3000
+"IP Toolbench loading thread" prio=6 tid=0x00000000026c3000 nid=0xb9c runnable [0x00000000026bd000]
+   java.lang.Thread.State: RUNNABLE
+
+RSP=0x00000000026bc608
+0x00000000026bc608 is pointing into the stack for thread: 0x00000000026c3000
+"IP Toolbench loading thread" prio=6 tid=0x00000000026c3000 nid=0xb9c runnable [0x00000000026bd000]
+   java.lang.Thread.State: RUNNABLE
+
+RBP=0x00007ffb70a59830
+0x00007ffb70a59830 is pointing to unknown location
+
+RSI=0x0000000000000003
+0x0000000000000003 is pointing to unknown location
+
+RDI=0x0000000000000020
+0x0000000000000020 is pointing to unknown location
+
+R8 =0x0000000000386000
+0x0000000000386000 is pointing to unknown location
+
+R9 =0x00000000026bc610
+0x00000000026bc610 is pointing into the stack for thread: 0x00000000026c3000
+"IP Toolbench loading thread" prio=6 tid=0x00000000026c3000 nid=0xb9c runnable [0x00000000026bd000]
+   java.lang.Thread.State: RUNNABLE
+
+R10=0x00000000eaf2d3e0
+
+[error occurred during error reporting (printing registers, top of stack, instructions near pc), id 0xe0000000]
+
+Stack: [0x00000000025c0000,0x00000000026c0000],  sp=0x00000000026bc608,  free space=1009k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [ntdll.dll+0xa0042]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+v  blob 0x00000000027f707f
+j  sun.font.TrueTypeFont.getTableBuffer(I)Ljava/nio/ByteBuffer;+93
+j  sun.font.TrueTypeFont.lookupName(SI)Ljava/lang/String;+12
+j  sun.font.TrueTypeFont.getFamilyName(Ljava/util/Locale;)Ljava/lang/String;+17
+j  sun.font.FontFamily.remove(Lsun/font/Font2D;)V+4
+j  sun.font.FontManager.replaceFont(Lsun/font/PhysicalFont;Lsun/font/PhysicalFont;)V+139
+j  sun.font.FontManager.addToFontList(Lsun/font/PhysicalFont;I)Lsun/font/PhysicalFont;+443
+j  sun.font.FontManager.registerFontFile(Ljava/lang/String;[Ljava/lang/String;IZI)Lsun/font/PhysicalFont;+84
+j  sun.font.FontManager.registerFonts([Ljava/lang/String;[[Ljava/lang/String;IIZIZ)V+50
+j  sun.java2d.SunGraphicsEnvironment.addDirFonts(Ljava/lang/String;Ljava/io/File;Ljava/io/FilenameFilter;IZIZZ)V+401
+j  sun.java2d.SunGraphicsEnvironment.registerFontsInDir(Ljava/lang/String;ZIZZ)V+34
+j  sun.java2d.SunGraphicsEnvironment.registerFontsOnPath(Ljava/lang/String;ZIZZ)V+33
+j  sun.java2d.SunGraphicsEnvironment.access$600(Lsun/java2d/SunGraphicsEnvironment;Ljava/lang/String;ZIZZ)V+8
+j  sun.java2d.SunGraphicsEnvironment$4.run()Ljava/lang/Object;+53
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;+0
+j  sun.java2d.SunGraphicsEnvironment.loadFontFiles()V+42
+j  sun.font.FontManager.findFont2D(Ljava/lang/String;II)Lsun/font/Font2D;+963
+j  sun.font.FontManager.findFont2D(Ljava/lang/String;II)Lsun/font/Font2D;+918
+j  sun.font.FontManager.findFont2D(Ljava/lang/String;II)Lsun/font/Font2D;+409
+j  java.awt.Font.getFont2D()Lsun/font/Font2D;+75
+v  ~StubRoutines::call_stub
+j  sun.font.FontManager.getFont2D(Ljava/awt/Font;)Lsun/font/Font2D;+0
+j  sun.font.FontManager.fontSupportsDefaultEncoding(Ljava/awt/Font;)Z+1
+j  com.sun.java.swing.plaf.windows.WindowsLookAndFeel$WindowsFontProperty.configureValue(Ljava/lang/Object;)Ljava/lang/Object;+146
+j  com.sun.java.swing.plaf.windows.DesktopProperty.createValue(Ljavax/swing/UIDefaults;)Ljava/lang/Object;+13
+j  javax.swing.UIDefaults.getFromHashtable(Ljava/lang/Object;)Ljava/lang/Object;+231
+j  javax.swing.UIDefaults.get(Ljava/lang/Object;)Ljava/lang/Object;+2
+j  javax.swing.MultiUIDefaults.get(Ljava/lang/Object;)Ljava/lang/Object;+39
+j  javax.swing.UIDefaults.getFont(Ljava/lang/Object;)Ljava/awt/Font;+2
+j  javax.swing.UIManager.getFont(Ljava/lang/Object;)Ljava/awt/Font;+4
+j  javax.swing.LookAndFeel.installColorsAndFont(Ljavax/swing/JComponent;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V+21
+j  javax.swing.plaf.basic.BasicProgressBarUI.installDefaults()V+31
+j  com.sun.java.swing.plaf.windows.WindowsProgressBarUI.installDefaults()V+1
+j  javax.swing.plaf.basic.BasicProgressBarUI.installUI(Ljavax/swing/JComponent;)V+9
+j  javax.swing.JComponent.setUI(Ljavax/swing/plaf/ComponentUI;)V+135
+j  javax.swing.JProgressBar.setUI(Ljavax/swing/plaf/ProgressBarUI;)V+2
+j  javax.swing.JProgressBar.updateUI()V+8
+j  javax.swing.JProgressBar.<init>(III)V+30
+j  javax.swing.JProgressBar.<init>(II)V+4
+j  altera.ipbu.flowmanager.FlowManager.<init>()V+331
+j  altera.ipbu.flowmanager.FlowManagerPlugin.plugin_initialize()V+5
+j  altera.ipbu.flowbase.plugin.BasePluginInterfaceObject.initialize()V+388
+j  altera.ipbu.flowmanager.FlowManagerMain.initialize([Ljava/lang/String;)V+26
+j  altera.ipbu.flowmanager.FlowManagerMain.iptb_main([Ljava/lang/String;Ljava/lang/Object;)Laltera/ipbu/flowmanager/FlowManagerMain;+14
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+161
+j  altera.ipbu.launcher.IPToolbench.<init>([Ljava/lang/String;Ljava/lang/Object;)V+327
+j  altera.ipbu.launcher.IPToolbench.main([Ljava/lang/String;)V+6
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000007ab0000 JavaThread "AWT-Windows" daemon [_thread_in_native, id=17972, stack(0x0000000007fa0000,0x00000000080a0000)]
+  0x0000000007aaa800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=17416, stack(0x0000000007950000,0x0000000007a50000)]
+  0x000000000711f800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=18612, stack(0x00000000076a0000,0x00000000077a0000)]
+  0x0000000007116800 JavaThread "CompilerThread1" daemon [_thread_in_native, id=12108, stack(0x00000000075a0000,0x00000000076a0000)]
+  0x0000000007103800 JavaThread "CompilerThread0" daemon [_thread_blocked, id=14276, stack(0x00000000074a0000,0x00000000075a0000)]
+  0x0000000007102800 JavaThread "Attach Listener" daemon [_thread_blocked, id=1220, stack(0x00000000073a0000,0x00000000074a0000)]
+  0x0000000007101800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=16480, stack(0x00000000072a0000,0x00000000073a0000)]
+  0x00000000027b8800 JavaThread "Finalizer" daemon [_thread_blocked, id=11976, stack(0x0000000006fa0000,0x00000000070a0000)]
+  0x00000000027b5800 JavaThread "Reference Handler" daemon [_thread_blocked, id=14432, stack(0x0000000006ea0000,0x0000000006fa0000)]
+=>0x00000000026c3000 JavaThread "IP Toolbench loading thread" [_thread_in_Java, id=2972, stack(0x00000000025c0000,0x00000000026c0000)]
+
+Other Threads:
+  0x00000000027a5800 VMThread [stack: 0x0000000006da0000,0x0000000006ea0000] [id=3972]
+  0x000000000713e800 WatcherThread [stack: 0x00000000077a0000,0x00000000078a0000] [id=14112]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 19136K, used 8256K [0x00000000eaab0000, 0x00000000ec000000, 0x0000000100000000)
+  eden space 16448K, 50% used [0x00000000eaab0000,0x00000000eb2c03e0,0x00000000ebac0000)
+  from space 2688K, 0% used [0x00000000ebd60000,0x00000000ebd60000,0x00000000ec000000)
+  to   space 2688K, 0% used [0x00000000ebac0000,0x00000000ebac0000,0x00000000ebd60000)
+ PSOldGen        total 43712K, used 0K [0x00000000c0000000, 0x00000000c2ab0000, 0x00000000eaab0000)
+  object space 43712K, 0% used [0x00000000c0000000,0x00000000c0000000,0x00000000c2ab0000)
+ PSPermGen       total 21248K, used 7904K [0x00000000bae00000, 0x00000000bc2c0000, 0x00000000c0000000)
+  object space 21248K, 37% used [0x00000000bae00000,0x00000000bb5b82b8,0x00000000bc2c0000)
+
+Dynamic libraries:
+0x0000000000400000 - 0x000000000042e000 	e:\quartus\quartus\bin64\jre64\bin\java.exe
+0x00007ffbec060000 - 0x00007ffbec250000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffbea320000 - 0x00007ffbea3d2000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffbe9b90000 - 0x00007ffbe9e35000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffbe6fd0000 - 0x00007ffbe705f000 	C:\WINDOWS\SYSTEM32\apphelp.dll
+0x00007ffb70670000 - 0x00007ffb70b02000 	C:\WINDOWS\SYSTEM32\AcLayers.DLL
+0x00007ffbea540000 - 0x00007ffbea5de000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffbea860000 - 0x00007ffbea9f5000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffbe8ff0000 - 0x00007ffbe9011000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffbea490000 - 0x00007ffbea4b6000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffbe9e90000 - 0x00007ffbea026000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffbe9020000 - 0x00007ffbe90be000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffbe99b0000 - 0x00007ffbe9aaa000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffbeb920000 - 0x00007ffbeb972000 	C:\WINDOWS\System32\SHLWAPI.dll
+0x00007ffbeb560000 - 0x00007ffbeb895000 	C:\WINDOWS\System32\combase.dll
+0x00007ffbebd40000 - 0x00007ffbebe60000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffbe9b10000 - 0x00007ffbe9b90000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffbebbe0000 - 0x00007ffbebc83000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffbebf10000 - 0x00007ffbebfa7000 	C:\WINDOWS\System32\sechost.dll
+0x0000000180000000 - 0x0000000180003000 	C:\WINDOWS\SYSTEM32\sfc.dll
+0x00007ffbdd490000 - 0x00007ffbdd519000 	C:\WINDOWS\SYSTEM32\WINSPOOL.DRV
+0x00007ffbe8f30000 - 0x00007ffbe8f41000 	C:\WINDOWS\System32\kernel.appcore.dll
+0x00007ffbea0e0000 - 0x00007ffbea106000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007ffbe5480000 - 0x00007ffbe5570000 	C:\WINDOWS\SYSTEM32\PROPSYS.dll
+0x00007ffbeb980000 - 0x00007ffbeba45000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ffbebe60000 - 0x00007ffbebf09000 	C:\WINDOWS\System32\shcore.dll
+0x00007ffbe8480000 - 0x00007ffbe84ba000 	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+0x00007ffbcc8f0000 - 0x00007ffbcc901000 	C:\WINDOWS\SYSTEM32\sfc_os.DLL
+0x00007ffbdb7a0000 - 0x00007ffbdb7b1000 	C:\WINDOWS\SYSTEM32\SortWindows61.dll
+0x00007ffbebc90000 - 0x00007ffbebcbe000 	C:\WINDOWS\System32\IMM32.DLL
+0x000000006d7f0000 - 0x000000006dee0000 	e:\quartus\quartus\bin64\jre64\bin\server\jvm.dll
+0x00007ffbe48b0000 - 0x00007ffbe48d4000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffbe4830000 - 0x00007ffbe485d000 	C:\WINDOWS\SYSTEM32\winmmbase.dll
+0x00007ffbe9e40000 - 0x00007ffbe9e8a000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x000000006d760000 - 0x000000006d76e000 	e:\quartus\quartus\bin64\jre64\bin\verify.dll
+0x000000006d3b0000 - 0x000000006d3d7000 	e:\quartus\quartus\bin64\jre64\bin\java.dll
+0x000000006d310000 - 0x000000006d31a000 	e:\quartus\quartus\bin64\jre64\bin\hpi.dll
+0x00007ffbebbd0000 - 0x00007ffbebbd8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x000000006d7b0000 - 0x000000006d7c2000 	e:\quartus\quartus\bin64\jre64\bin\zip.dll
+0x000000006d000000 - 0x000000006d1c3000 	E:\Quartus\quartus\bin64\jre64\bin\awt.dll
+0x00007ffbeba50000 - 0x00007ffbebba7000 	C:\WINDOWS\System32\ole32.dll
+0x00007ffbeae70000 - 0x00007ffbeb557000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ffbe90c0000 - 0x00007ffbe9840000 	C:\WINDOWS\System32\windows.storage.dll
+0x00007ffbe8fa0000 - 0x00007ffbe8fc3000 	C:\WINDOWS\System32\profapi.dll
+0x00007ffbe8f50000 - 0x00007ffbe8f9a000 	C:\WINDOWS\System32\powrprof.dll
+0x00007ffbe8f20000 - 0x00007ffbe8f30000 	C:\WINDOWS\System32\UMPDC.dll
+0x00007ffbe9840000 - 0x00007ffbe9857000 	C:\WINDOWS\System32\cryptsp.dll
+0x00007ffbdb830000 - 0x00007ffbdbab4000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.1082_none_9e8193e1e45b25c1\COMCTL32.dll
+0x00007ffbe75e0000 - 0x00007ffbe760d000 	C:\WINDOWS\SYSTEM32\DWMAPI.DLL
+0x00007ffbe7110000 - 0x00007ffbe71a9000 	C:\WINDOWS\system32\uxtheme.dll
+0x00007ffbea170000 - 0x00007ffbea2a5000 	C:\WINDOWS\System32\MSCTF.dll
+0x00007ffb904a0000 - 0x00007ffb90551000 	C:\Program Files\Nahimic\Nahimic2\UserInterface\x64\Nahimic2DevProps.dll
+0x00007ffbea2b0000 - 0x00007ffbea31f000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffb905f0000 - 0x00007ffb90653000 	C:\Program Files\Nahimic\Nahimic2\UserInterface\x64\Nahimic2OSD.dll
+0x00007ffbea3e0000 - 0x00007ffbea482000 	C:\WINDOWS\System32\clbcatq.dll
+0x00007ffbde450000 - 0x00007ffbde4c2000 	C:\WINDOWS\System32\MMDevApi.dll
+0x00007ffbe8d10000 - 0x00007ffbe8d3a000 	C:\WINDOWS\System32\DEVOBJ.dll
+0x00007ffbdc9c0000 - 0x00007ffbdcb1d000 	C:\WINDOWS\SYSTEM32\AUDIOSES.DLL
+0x00007ffbe4bc0000 - 0x00007ffbe4d13000 	C:\WINDOWS\SYSTEM32\wintypes.dll
+0x000000006d2a0000 - 0x000000006d306000 	E:\Quartus\quartus\bin64\jre64\bin\fontmanager.dll
+0x000000006d600000 - 0x000000006d617000 	E:\Quartus\quartus\bin64\jre64\bin\net.dll
+0x00007ffbe8770000 - 0x00007ffbe87d7000 	C:\WINDOWS\system32\mswsock.dll
+0x000000006d620000 - 0x000000006d62b000 	E:\Quartus\quartus\bin64\jre64\bin\nio.dll
+
+VM Arguments:
+jvm_args: -Xms64m -Xmx1g 
+java_command: e:/quartus/ip/altera/nco/lib/../../common/ip_toolbench/v1.3.0/bin/launcher.jar -devicefamily:Cyclone IV E -projectname:nco -projectpath:F:/Code/FPGA_project/nco/par/ -lib_dir:e:/quartus/ip/altera/nco/lib/ -flow_dir:e:/quartus/ip/altera/nco/lib/../../common/ip_toolbench/v1.3.0/bin -wizard:nco F:/Code/FPGA_project/nco/par/ipcore/nco.v -n -symbol -p2 -quartus_rootdir:e:/quartus/quartus/
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=E:\Quartus\quartus\bin\jre
+PATH=e:\quartus\quartus\bin64\;e:\quartus\quartus\bin64\;E:\Xshell\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\Python37\Scripts\;D:\Python37\;C:\Program Files\Microsoft MPI\Bin\;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Matlab\runtime\win64;D:\Matlab\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;E:\Git\cmd;e:\ChemWindow\Bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;E:\ChemBioOffice\ChemScript\Lib;C:\Program Files (x86)\dotnet\;C:\Users\Tseing Ik-sing\AppData\Local\Microsoft\WindowsApps;E:\heroku\bin;C:\Users\Tseing Ik-sing\AppData\Local\GitHubDesktop\bin;D:\TexLive\texlive\2019\bin\win32;F:\Code\zeu;E:\Fiddler;E:\iverilog\bin;E:\iverilog\gtkwave\bin;E:\Quartus\quartus\bin\jre\bin
+USERNAME=zengx
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7600 
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 94 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 16650060k(6881500k free), swap 17698636k(3307076k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (19.0-b09) for windows-amd64 JRE (1.6.0_23-b05), built on Nov 13 2010 02:43:42 by "java_re" with MS VC++ 8.0 (VS2005)
+
+time: Sun Oct 04 17:38:44 2020
+elapsed time: 1 seconds
+

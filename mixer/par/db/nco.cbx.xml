@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="nco">
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|nco:u_nco|nco_st:nco_st_inst|asj_dxx:ux002|lpm_add_sub:ux014" CBX_FILE_NAME="add_sub_qth.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|nco:u_nco|nco_st:nco_st_inst|asj_nco_as_m_cen:ux0121|altsyncram:altsyncram_component0" CBX_FILE_NAME="altsyncram_4s81.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|mult1:u_mult1|lpm_mult:lpm_mult_component" CBX_FILE_NAME="mult_68n.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|nco:u_nco|nco_st:nco_st_inst|asj_altqmcpipe:ux000|lpm_add_sub:acc" CBX_FILE_NAME="add_sub_15i.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|nco:u_nco|nco_st:nco_st_inst|asj_nco_as_m_cen:ux0120|altsyncram:altsyncram_component0" CBX_FILE_NAME="altsyncram_9s81.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|nco:u_nco|nco_st:nco_st_inst|asj_nco_isdr:ux710isdr|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_ori.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|pll:u_pll|altpll:altpll_component" CBX_FILE_NAME="pll_altpll.v"/>
+	</PROJECT>
+</LOG_ROOT>
