@@ -33,8 +33,8 @@ rom u_rom(
 );
 
 dds u_dds(
-    .clk_wave   (clk_wave),
-    .clk_freq   (clk_freq),
+    .clk_wave   (clk_wave),         //1.638MHz
+    .clk_freq   (clk_freq),         //2kHZ
     .sys_rst    (sys_rst_n),
     .addr       (addr)
 );
