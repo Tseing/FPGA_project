@@ -1,0 +1,36 @@
+module top(
+    input               sys_clk,
+    input               sys_rst_n,
+    output              da_clk,
+    output              da_wrt,
+    output      [13:0]  da_data
+);
+
+wire            clk_125m;
+wire    [14:0]  oc_sin;
+
+assign da_clk = ~clk_125m;
+assign da_wrt = clk_125m;
+assign da_data = data[13:0];
+assign wave = {oc_sin[14], 1'b0, oc_sin[13:1]};
+
+pll u_pll(
+    .inclk0         (sys_clk),
+    .c0             (clk_125m)
+);
+
+nco u_nco(
+    .phi_inc_i      (8'd131),       //相位增量
+    .clk            (sys_clk),
+    .reset_n        (sys_rst_n),
+    .clken          (1'b1),         //时钟允许信号
+    .fsin_o         (oc_sin),       //本振正弦信号
+    .out_valid      (out_valid)     //输出有效信号
+);
+
+add u_add(
+    .dataa          (wave),
+    .result         (data)
+);
+
+endmodule
