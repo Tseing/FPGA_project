@@ -32,13 +32,13 @@ wire    signed  [10:0]  data_qsub;
 wire                    clk_out;
 wire                    clk_test;
 
+wire            [9:0]   data_o;/*synthesis keep*/
+wire            [10:0]  data_mult;/*synthesis keep*/
+
 // //data_in转数据格式，扩位转signed
 assign data_sub = {1'b0, data_in[9:0]};
-// assign data_o = (data_qsub[10]==1'b0) ? data_qsub[9:0] : ~(data_qsub[9:0]-1'b1);
-// assign data_mult = data_o << 1;
-// assign data = (data_qsub[10]==1'b0) ? {1'b0, data_mult} : {1'b1, ~(data_mult-1'b1)};
+assign data_o = (data_qsub[10]==1'b0) ? data_qsub[9:0] : ~data_qsub[9:0]+1'b1;  //去符号原码，10bit
 
-assign data = (data_qsub[10]==1'b1) ? {data_qsub, 1'b0} : {1'b1, ~(((~(data_qsub[9:0]-1'b1))<<1)-1'b1), 1'b0};
 
 assign sink_error = 2'b00;
 assign source_ready = 1'b1;
@@ -53,6 +53,22 @@ wire    signed  [23:0]  xkre_square, xkim_square;
 assign xkre_square = xkre * xkre;
 assign xkim_square = xkim * xkim;
 assign amp = xkre_square + xkim_square;
+
+trans u_trans(
+    .clk            (sys_clk),
+    .rst_n          (sys_rst_n),
+    .data_o         (data_o),
+    .data_qsub      (data_qsub),
+    .data           (data)
+);
+
+cnt u_cnt(
+    .clk            (sys_clk),
+    .rst_n          (sys_rst_n),
+    .sink_sop       (sink_sop),
+    .sink_eop       (sink_eop),
+    .sink_valid     (sink_valid)
+);
 
 fftcore u_fftcore(
     .clk            (sys_clk),
@@ -80,14 +96,6 @@ pll u_pll(
     .inclk0         (sys_clk),
     .c0             (clk_out),          //50MHz
     .c1             (clk_test)          //125MHz
-);
-
-cnt u_cnt(
-    .clk            (sys_clk),
-    .rst_n          (sys_rst_n),
-    .sink_sop       (sink_sop),
-    .sink_eop       (sink_eop),
-    .sink_valid     (sink_valid)
 );
 
 sub u_sub(
