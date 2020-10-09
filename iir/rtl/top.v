@@ -2,6 +2,8 @@ module top(
     input                   sys_clk,
     input                   sys_rst_n,
     input           [9:0]   data_in,
+    output                  ad_clk,
+    output                  ad_oe,
     output  signed          data_out
 );
 
@@ -13,16 +15,19 @@ wire            [11:0]  data;
 wire    signed  [11:0]  Din;
 wire    signed  [11:0]  Dout;
 wire    signed  [11:0]  Yin;
-wire    signed  [23:0]  Xout;
-wire    signed  [23:0]  Yout;
-wire    signed  [24:0]  Ysum;
-wire    signed  [24:0]  Ydiv;
+wire    signed  [24:0]  Xout;
+wire    signed  [24:0]  Yout;
+wire    signed  [25:0]  Ysum;
+wire    signed  [25:0]  Ydiv;
+
+assign ad_clk = ~sys_clk;
+assign ad_oe = 1'b0;
 
 assign Din = data;
 assign data_out = Dout;
 
 assign Ysum = Xout - Yout;
-assign Ydiv = {{10{Ysum[24]}}, Ysum[24:10]};
+assign Ydiv = {{10{Ysum[25]}}, Ysum[25:10]};
 assign Yin = sys_rst_n ? 1'd0 : Ydiv[11:0];
 assign Dout = Yin;
 

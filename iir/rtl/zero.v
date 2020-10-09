@@ -2,7 +2,7 @@ module zero(
     input                   rst_n,
     input                   clk,
     input   signed  [11:0]  Xin,
-    output  signed  [23:0]  Xout
+    output  signed  [24:0]  Xout
 );
 
 reg     signed  [11:0]  Xin_reg[1:0];
