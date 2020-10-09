@@ -1,0 +1,7 @@
+v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,zero:u_zero|multX2:u_multX2|lpm_mult:lpm_mult_component|mult_e8n:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,pole:u_pole|multY1:u_multY1|lpm_mult:lpm_mult_component|mult_e8n:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,pole:u_pole|multY0:u_multY0|lpm_mult:lpm_mult_component|mult_e8n:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,zero:u_zero|multX0:u_multX0|lpm_mult:lpm_mult_component|mult_e8n:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,zero:u_zero|multX1:u_multX1|lpm_mult:lpm_mult_component|mult_e8n:auto_generated|mac_out2,
+PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,zero:u_zero|multX1:u_multX1|lpm_mult:lpm_mult_component|mult_e8n:auto_generated|mac_mult1,

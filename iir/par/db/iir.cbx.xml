@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="iir">
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|pole:u_pole|multY0:u_multY0|lpm_mult:lpm_mult_component" CBX_FILE_NAME="mult_e8n.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|pole:u_pole|multY1:u_multY1|lpm_mult:lpm_mult_component" CBX_FILE_NAME="mult_e8n.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|zero:u_zero|multX0:u_multX0|lpm_mult:lpm_mult_component" CBX_FILE_NAME="mult_e8n.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|zero:u_zero|multX1:u_multX1|lpm_mult:lpm_mult_component" CBX_FILE_NAME="mult_e8n.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|zero:u_zero|multX2:u_multX2|lpm_mult:lpm_mult_component" CBX_FILE_NAME="mult_e8n.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

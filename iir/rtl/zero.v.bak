@@ -13,7 +13,6 @@ assign coe[2] =  12'd1006;
 assign coe[1] = -12'd1911;
 assign coe[0] =  12'd1006;
 
-wire signed [23:0] mult_reg [2:0];
 assign Xout = mult_reg[0] + mult_reg[1] + mult_reg[2];
 
 always @(posedge clk or posedge rst_n) begin
@@ -30,7 +29,7 @@ end
 
 multX2 u_multX2(
     .dataa      (Xin),
-    .datab      (coe[2]),
+    .datab      (cor[2]),
     .result     (mult_reg[2])
 );
 

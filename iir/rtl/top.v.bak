@@ -23,7 +23,7 @@ assign data_out = Dout;
 
 assign Ysum = Xout - Yout;
 assign Ydiv = {{10{Ysum[24]}}, Ysum[24:10]};
-assign Yin = sys_rst_n ? 1'd0 : Ydiv[11:0];
+assign Yin = rst ? 1'd0 : Ydiv[11:0];
 assign Dout = Yin;
 
 // //data_in转数据格式，扩位转signed

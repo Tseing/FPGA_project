@@ -13,7 +13,7 @@ wire    signed  [11:0]  coe[2:0];
 assign coe[1] = -12'd1911;
 assign coe[0] =  12'd986;
 
-wire signed [23:0] mult_reg [1:0];
+wire signed [23:0] mult_reg [2:0];
 assign Yout = mult_reg[0] + mult_reg[1];
 
 always @(posedge clk or posedge rst_n) begin
@@ -31,13 +31,13 @@ end
 
 multY0 u_multY0(
     .dataa      (Yin_reg[0]),
-    .datab      (coe[0]),
+    .datab      (core[0]),
     .result     (mult_reg[0])
 );
 
 multY1 u_multY1(
     .dataa      (Yin_reg[1]),
-    .datab      (coe[1]),
+    .datab      (core[1]),
     .result     (mult_reg[1])
 );
 
