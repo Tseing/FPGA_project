@@ -2,7 +2,7 @@ module pole(
     input                   clk,
     input                   rst_n,
     input   signed  [11:0]  Yin,
-    output  signed  [25:0]  Yout
+    output  signed  [24:0]  Yout
 );
 
 reg     signed  [11:0]  Yin_reg[1:0];
@@ -10,8 +10,8 @@ reg             [3:0]   i, j;
 
 wire    signed  [11:0]  coe[2:0];
 //assign coe[2] =  12'd1024;
-assign coe[1] =  12'd1911;
-assign coe[0] = -12'd986;
+assign coe[1] = -12'd1911;
+assign coe[0] =  12'd986;
 
 assign Yout = mult_reg[0] + mult_reg[1];
 
@@ -40,3 +40,4 @@ multY1 u_multY1(
     .result     (mult_reg[1])
 );
 
+endmodule

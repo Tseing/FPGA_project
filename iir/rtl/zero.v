@@ -2,7 +2,7 @@ module zero(
     input                   rst_n,
     input                   clk,
     input   signed  [11:0]  Xin,
-    output  signed  [20:0]  Xout
+    output  signed  [23:0]  Xout
 );
 
 reg     signed  [11:0]  Xin_reg[1:0];
@@ -39,7 +39,7 @@ multX1 u_multX1(
     .result     (mult_reg[1])
 );
 
-multX2 u_multX2(
+multX0 u_multX0(
     .dataa      (Xin_reg[0]),
     .datab      (coe[0]),
     .result     (mult_reg[0])

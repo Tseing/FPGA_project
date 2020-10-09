@@ -17,12 +17,12 @@ wire clk_test;
 
 assign ad0_oe = 1'b0;               //低电平有效
 assign ad1_oe = 1'b0;               //低电平有效
-assign ad0_clk = ~clk_out1;
-assign ad1_clk = ~clk_out1;
+assign ad0_clk = ~clk_out;
+assign ad1_clk = ~clk_out;
 
 pll u_pll(
     .inclk0     (sys_clk),
-    .c0         (clk_out1),
+    .c0         (clk_out),
     .c1         (clk_test)
 );
 
